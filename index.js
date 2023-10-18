@@ -11,7 +11,6 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 
 import { UserController, PostController } from './controllers/index.js';
 
-
 mongoose
   .connect('mongodb+srv://umka:monolit600@usf.uhtjvit.mongodb.net/Posts?retryWrites=true&w=majority')
   .then(() => console.log('DB ok'))
