@@ -2,6 +2,9 @@ import express from 'express';
 import fs from 'fs';
 import multer from 'multer';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import mongoose from 'mongoose';
 
@@ -60,7 +63,6 @@ app.patch(
   handleValidationErrors,
   PostController.update,
 );
-
 
 app.listen(process.env.PORT || 4445, (err) => {
   if (err) {
