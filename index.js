@@ -4,6 +4,9 @@ import multer from 'multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+const PORT = process.env.PORT || 4441
+
+
 dotenv.config();
 
 import mongoose from 'mongoose';
@@ -32,6 +35,8 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
+
+
 
 const upload = multer({ storage });
 
@@ -64,10 +69,20 @@ app.patch(
   PostController.update,
 );
 
-app.listen(process.env.PORT || 4445, (err) => {
+app.listen(PORT, (err) => {
   if (err) {
     return console.log(err);
   }
-
   console.log('Server OK');
 });
+
+
+/*client.connect(err => {
+  if(err){ console.error(err); return false;}
+  // connection to mongo is successful, listen for requests
+  app.listen(PORT, () => {
+    console.log("Server OK");
+  })
+});*/
+
+
