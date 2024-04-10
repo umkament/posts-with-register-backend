@@ -68,7 +68,6 @@ const imageData = req.body.image
        return;
      }
 
-
      // Возвращаем URL загруженного изображения
      res.json({
        url: `/uploads/${fileName}`
