@@ -67,7 +67,6 @@ const imageData = req.body.image
        res.status(500).json({ error: 'Ошибка при сохранении изображения' });
        return;
      }
-
      // Возвращаем URL загруженного изображения
      res.json({
        url: `/uploads/${fileName}`
