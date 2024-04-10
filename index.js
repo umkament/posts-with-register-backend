@@ -54,6 +54,7 @@ app.get('/auth/me', checkAuth, UserController.getMe);
 
 
 app.post('/upload', checkAuth, (req, res)=>{
+
 const imageData = req.body.image
    const fileName = uuidv4()+'.jpg'
    // Преобразуем base64-данные изображения в бинарные данные
