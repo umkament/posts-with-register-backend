@@ -22,6 +22,8 @@ export const getLastTags = async (req, res) => {
 export const getAll = async (req, res) => {
   try {
     const posts = await PostModel.find().populate('user').exec();
+    console.log('Received posts:', posts);
+
     res.json(posts);
   } catch (err) {
     console.log(err);
