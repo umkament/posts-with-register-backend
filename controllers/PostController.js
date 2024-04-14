@@ -107,13 +107,18 @@ export const remove = async (req, res) => {
 
 export const create = async (req, res) => {
   try {
+    const {title, text, imageUrl, tags, user} = req.body
+    console.log('Received imageUrl:', imageUrl);
+
     const doc = new PostModel({
-      title: req.body.title,
-      text: req.body.text,
-      imageUrl: req.body.imageUrl,
-      tags: req.body.tags,   /*.split(','),*/
-      user: req.userId,
+      title,
+      text,
+      imageUrl,
+      tags,  /*.split(','),*/
+      user
     });
+
+    console.log('Received imageUrl:', );
 
     const post = await doc.save();
 
