@@ -109,7 +109,7 @@ export const remove = async (req, res) => {
 
 export const create = async (req, res) => {
   try {
-    const {title, text, imageUrl, tags, user} = req.body
+    const {title, text, imageUrl, tags} = req.body
     console.log('Received imageUrl:', imageUrl);
 
     const doc = new PostModel({
@@ -117,7 +117,7 @@ export const create = async (req, res) => {
       text,
       imageUrl,
       tags,  /*.split(','),*/
-      user
+      user: req.userId
     });
 
     console.log('Received imageUrl:', );
